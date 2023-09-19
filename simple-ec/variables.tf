@@ -9,8 +9,8 @@ variable "public_key" {
   description = "Public SSH key to allow access to the EC2 instance"
 }
 
-variable "instance_type" {
-  default     = "t3.micro"
-  description = "Size for the EC2 instance"
-  type        = string
+variable "ubuntu_instances" {
+  type = map(object({
+    instance_type = optional(string, "t3.micro")
+  }))
 }

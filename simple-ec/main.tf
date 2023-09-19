@@ -53,15 +53,16 @@ resource "aws_key_pair" "this" {
 }
 
 module "ubuntu_ec2" {
-  source = "./modules/ubuntu"
+  source   = "./modules/ubuntu"
+  for_each = var.ubuntu_instances
 
   instance = {
     key_name          = aws_key_pair.this.id
     subnet_id         = module.vpc.public_subnets[0]
-    type              = var.instance_type
+    type              = each.value.instance_type
     security_group_id = aws_security_group.this.id
     tags = {
-      Name = "${local.tag_prefix}_ubuntu"
+      Name = "${local.tag_prefix}_${each.key}"
     }
   }
 }
