@@ -4,13 +4,13 @@ variable "project_name" {
   default     = null
 }
 
+variable "public_key" {
+  type        = string
+  description = "Public SSH key to allow access to the EC2 instance"
+}
+
 variable "instance_type" {
   default     = "t3.micro"
   description = "Size for the EC2 instance"
-  type        = string
-}
-
-variable "vpc_id" {
-  description = "ID for VPC to attach EC2 instance"
   type        = string
 }
