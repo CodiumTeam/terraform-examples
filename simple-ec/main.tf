@@ -6,6 +6,20 @@ locals {
   azs        = slice(data.aws_availability_zones.available.names, 0, 1)
 }
 
+resource "tls_private_key" "this" {
+  algorithm = "ED25519"
+}
+
+resource "local_sensitive_file" "private_key" {
+  content  = tls_private_key.this.private_key_openssh
+  filename = pathexpand("~/.ssh/id_ed25519")
+}
+
+resource "local_file" "private_key" {
+  content  = tls_private_key.this.public_key_openssh
+  filename = pathexpand("~/.ssh/id_ed25519.pub")
+}
+
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
   version = "5.1.2"
@@ -20,8 +34,6 @@ module "vpc" {
     Name = "${local.tag_prefix}_vpc"
   }
 }
-
-
 
 resource "aws_security_group" "this" {
   name   = "${local.tag_prefix}_sg"
@@ -49,8 +61,9 @@ resource "aws_security_group" "this" {
 
 resource "aws_key_pair" "this" {
   key_name   = local.tag_prefix
-  public_key = var.public_key
+  public_key = tls_private_key.this.public_key_openssh
 }
+
 
 module "ubuntu_ec2" {
   source   = "./modules/ubuntu"
