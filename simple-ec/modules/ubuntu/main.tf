@@ -1,3 +1,15 @@
+locals {
+  profiles = {
+    default   = ""
+    webserver = <<-EOT
+      #!/bin/bash
+      sudo apt-get update
+      sudo apt-get install -y nginx
+      sudo ufw allow 'Nginx HTTTP'
+    EOT
+  }
+}
+
 data "aws_ami" "ubuntu" {
   most_recent = true
 
@@ -21,7 +33,7 @@ resource "aws_instance" "this" {
   associate_public_ip_address = true
   key_name                    = var.instance.key_name
 
-  user_data                   = var.instance.user_data
+  user_data                   = local.profiles[var.instance.profile]
   user_data_replace_on_change = true
 
   vpc_security_group_ids = [

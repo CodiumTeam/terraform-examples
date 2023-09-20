@@ -7,5 +7,6 @@ variable "project_name" {
 variable "ubuntu_instances" {
   type = map(object({
     instance_type = optional(string, "t3.micro")
+    profile       = optional(string)
   }))
 }

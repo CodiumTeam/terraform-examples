@@ -6,6 +6,6 @@ variable "instance" {
     type              = string
     security_group_id = string
     tags              = map(string)
-    user_data         = optional(string)
+    profile           = optional(string, "default")
   })
 }

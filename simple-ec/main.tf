@@ -81,12 +81,7 @@ module "ubuntu_ec2" {
     subnet_id         = module.vpc.public_subnets[0]
     type              = each.value.instance_type
     security_group_id = aws_security_group.this.id
-    user_data         = <<-EOT
-      #!/bin/bash
-      sudo apt-get update
-      sudo apt-get install nginx
-      sudo ufw allow 'Nginx HTTTP'
-    EOT
+    profile           = each.value.profile
 
     tags = {
       Name = "${local.tag_prefix}_${each.key}"
