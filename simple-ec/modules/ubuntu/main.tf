@@ -21,6 +21,9 @@ resource "aws_instance" "this" {
   associate_public_ip_address = true
   key_name                    = var.instance.key_name
 
+  user_data                   = var.instance.user_data
+  user_data_replace_on_change = true
+
   vpc_security_group_ids = [
     var.instance.security_group_id
   ]

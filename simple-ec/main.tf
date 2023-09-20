@@ -47,6 +47,13 @@ resource "aws_security_group" "this" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
+  ingress {
+    from_port   = 80
+    protocol    = "tcp"
+    to_port     = 80
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
   egress {
     from_port   = 0
     to_port     = 0
@@ -74,6 +81,13 @@ module "ubuntu_ec2" {
     subnet_id         = module.vpc.public_subnets[0]
     type              = each.value.instance_type
     security_group_id = aws_security_group.this.id
+    user_data         = <<-EOT
+      #!/bin/bash
+      sudo apt-get update
+      sudo apt-get install nginx
+      sudo ufw allow 'Nginx HTTTP'
+    EOT
+
     tags = {
       Name = "${local.tag_prefix}_${each.key}"
     }
