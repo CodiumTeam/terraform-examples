@@ -3,6 +3,7 @@
 A collection of simple Terraform examples to highlight the core concepts of Terraform using the AWS provider. All the examples deploy a simple EC2 Ubuntu instance.
 
 You may need to configure access to AWS, by installing AWS CLI and runing `aws config`. The examples can be simply run doing:
+
 ```bash
 terraform init
 terraform apply
@@ -15,7 +16,7 @@ In addition, a devcontainer has been set up so it can be started with VS Code an
 
 # Terraform core concepts
 
-1. HCL, resources and providers
+1. [HCL, resources and providers](1-resources/README.md)
 2. Using variables
 3. Generating output
 4. Avoid repetition with locals
