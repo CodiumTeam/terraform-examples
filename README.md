@@ -19,7 +19,7 @@ In addition, a devcontainer has been set up so it can be started with VS Code an
 1. [HCL, resources and providers](1-resources/README.md)
 2. [Using variables](2-variables\README.md)
 3. [Generating output](3-output\README.md)
-4. Avoid repetition with locals
+4. [Avoid repetition with locals](4-locals\README.md)
 5. Query information using data sources
 6. Use modules to make things easier
 7. Verifying with checks, preconditions, postconditions
