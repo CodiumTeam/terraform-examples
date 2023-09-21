@@ -17,7 +17,7 @@ In addition, a devcontainer has been set up so it can be started with VS Code an
 # Terraform core concepts
 
 1. [HCL, resources and providers](1-resources/README.md)
-2. Using variables
+2. [Using variables](2-variables\README.md)
 3. Generating output
 4. Avoid repetition with locals
 5. Query information using data sources
