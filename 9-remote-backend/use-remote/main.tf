@@ -6,7 +6,7 @@ terraform {
 // variables not allowed in this block
   backend "s3" {
     region         = "eu-west-1"
-    bucket         = "terraform-20230921080318966200000001"
+    bucket         = "terraform-codium-state-bucket"
     key            = "use-remote/terraform.tfstate"
     dynamodb_table = "terraform-locking"
   }

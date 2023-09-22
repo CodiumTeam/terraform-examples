@@ -22,8 +22,8 @@ In addition, a devcontainer has been set up so it can be started with VS Code an
 4. [Avoid repetition with locals](4-locals/README.md)
 5. [Query information using data sources](5-datasources/README.md)
 6. [Use modules to make things easier](6-invoking-modules/README.md)
-7. Verifying with checks, pre-conditions, post-conditions
-8. Encapsulate your code in modules
-9. Set up a remote backend
+7. [Verifying with checks, pre-conditions, post-conditions](7-checks/README.md)
+8. [Encapsulate your code in modules](8-creating-modules/README.md)
+9. [Set up a remote backend](9-remote-backend/README.md)
 10. Manage multiple environments
 11. Best practices
