@@ -3,7 +3,7 @@
 It is useful to be able to see information about the changes made after they have been completed. Some of this information will only be available after the process has finished.
 For example, we may want to see the public IP of the a EC2 instance; this is only available after the resource has been created.
 
-This is done by defining an *output* block. They can be definied in any `*.tf` file, but the convention is to put them in an `outputs.tf` file.
+This is done by defining an *output* block. They can be defined in any `*.tf` file, but the convention is to put them in an `outputs.tf` file.
 
 For each output you can add a description to document its meaning.
 
