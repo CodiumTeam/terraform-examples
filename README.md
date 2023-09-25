@@ -26,4 +26,4 @@ In addition, a devcontainer has been set up so it can be started with VS Code an
 8. [Encapsulate your code in modules](8-creating-modules/README.md)
 9. [Set up a remote backend](9-remote-backend/README.md)
 10. [Manage multiple environments](10-environments/README.md)
-11. Best practices
+11. [Best practices](11-best-practices/README.md)
