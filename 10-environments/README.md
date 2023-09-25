@@ -1,4 +1,4 @@
-
+# 10. Manage multiple environments
 
 If your project is not too complex, you may be able to use it to deploy to multiple environments simply by changing the input variables. The recommendation is to create a `*.tfvars` file for each of the environments. When invoking terraform the right file is selected adding the `-var-file` to the CLI `terraform` command.
 
