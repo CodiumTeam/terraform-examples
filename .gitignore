@@ -8,3 +8,4 @@
 
 # Directories
 .terraform/
+.terragrunt-cache/
