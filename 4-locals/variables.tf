@@ -14,6 +14,6 @@ variable "project_name" {
 
 variable "instance_type" {
   description = "Type of EC2 machine to create. Defaults to t2.nano"
-  default     = "t2.nano"
   type        = string
+  default     = "t2.nano"
 }
