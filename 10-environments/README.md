@@ -2,7 +2,7 @@
 
 If your project is not too complex, you may be able to use it to deploy to multiple environments simply by changing the input variables. The recommendation is to create a `*.tfvars` file for each of the environments. When invoking terraform the right file is selected adding the `-var-file` to the CLI `terraform` command.
 
-HOwever as projects grow in complexity, this many not give the required flexibility to capture the differences between environments. Also, as the project grows, it may be beneficial to split it into smaller chunks. Not only through modules, but in separate projects that can be executed independently.
+However, as projects grow in complexity, this many not give the required flexibility to capture the differences between environments. Also, as the project grows, it may be beneficial to split it into smaller chunks. Not only through modules, but in separate projects that can be executed independently.
 
 This can lead to a structure where each environment is in a separate folder, and within each one, a folder contains a project for each of the components. 
 In order to avoid duplicating lots of code, most of the definitions are created as modules, either on the same repository or in another one. Each component then invokes the module with the required input values stored in a `tfvars` file.
