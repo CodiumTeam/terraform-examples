@@ -41,7 +41,9 @@ Use a linter, or `terraform fmt` to ensure consistency.
 
 - Pin versions for providers and for external modules.
 
+- Use `required_version` to indicate the minimum version of Terraform required.
 
+- Auto generate documentation 
 
 
 > Credits: https://www.terraform-best-practices.com/naming
